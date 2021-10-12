@@ -1,5 +1,19 @@
 import { firestore } from '../../firebase/firebase';
 
+export const promosLoading = () => ({
+    type: 'PROMOS_LOADING'
+});
+
+export const promosFailed = (errmess) => ({
+    type: 'PROMOS_FAILED',
+    payload: errmess
+});
+
+export const addPromos = (promos) => ({
+    type: 'ADD_PROMOS',
+    payload: promos
+});
+
 export const fetchPromos = () => (dispatch) => {
     dispatch(promosLoading(true));
 
@@ -16,17 +30,3 @@ export const fetchPromos = () => (dispatch) => {
         .then(promos => dispatch(addPromos(promos)))
         .catch(error => dispatch(promosFailed(error.message)));
 }
-
-export const promosLoading = () => ({
-    type: 'PROMOS_LOADING'
-});
-
-export const promosFailed = (errmess) => ({
-    type: 'PROMOS_FAILED',
-    payload: errmess
-});
-
-export const addPromos = (promos) => ({
-    type: 'ADD_PROMOS',
-    payload: promos
-});

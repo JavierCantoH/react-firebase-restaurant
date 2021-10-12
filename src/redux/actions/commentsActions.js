@@ -6,6 +6,16 @@ export const addComment = (comment) => ({
     payload: comment
 });
 
+export const commentsFailed = (errmess) => ({
+    type: 'COMMENTS_FAILED',
+    payload: errmess
+});
+
+export const addComments = (comments) => ({
+    type: 'ADD_COMMENTS',
+    payload: comments
+});
+
 export const postComment = (dishId, rating, comment) => (dispatch) => {
 
     if (!auth.currentUser) {
@@ -56,13 +66,3 @@ export const fetchComments = () => (dispatch) => {
         .then(comments => dispatch(addComments(comments)))
         .catch(error => dispatch(commentsFailed(error.message)));
 }
-
-export const commentsFailed = (errmess) => ({
-    type: 'COMMENTS_FAILED',
-    payload: errmess
-});
-
-export const addComments = (comments) => ({
-    type: 'ADD_COMMENTS',
-    payload: comments
-});

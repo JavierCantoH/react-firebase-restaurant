@@ -7,6 +7,7 @@ export const Auth = (state = {
         user: null,
         errMess: null
     }, action) => {
+        
     switch (action.type) {
         case 'LOGIN_REQUEST':
             return {...state,

@@ -1,5 +1,19 @@
 import { firestore } from '../../firebase/firebase';
 
+export const leadersLoading = () => ({
+    type: 'LEADERS_LOADING'
+});
+
+export const leadersFailed = (errmess) => ({
+    type: 'LEADERS_FAILED',
+    payload: errmess
+});
+
+export const addLeaders = (leaders) => ({
+    type: 'ADD_LEADERS',
+    payload: leaders
+});
+
 export const fetchLeaders = () => (dispatch) => {
     
     dispatch(leadersLoading());
@@ -17,17 +31,3 @@ export const fetchLeaders = () => (dispatch) => {
     .then(leaders => dispatch(addLeaders(leaders)))
     .catch(error => dispatch(leadersFailed(error.message)));
 }
-
-export const leadersLoading = () => ({
-    type: 'LEADERS_LOADING'
-});
-
-export const leadersFailed = (errmess) => ({
-    type: 'LEADERS_FAILED',
-    payload: errmess
-});
-
-export const addLeaders = (leaders) => ({
-    type: 'ADD_LEADERS',
-    payload: leaders
-});

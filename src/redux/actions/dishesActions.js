@@ -1,5 +1,20 @@
 import { firestore } from '../../firebase/firebase';
 
+
+export const dishesLoading = () => ({
+    type: 'DISHES_LOADING'
+});
+
+export const dishesFailed = (errmess) => ({
+    type: 'DISHES_FAILED',
+    payload: errmess
+});
+
+export const addDishes = (dishes) => ({
+    type: 'ADD_DISHES',
+    payload: dishes
+});
+
 export const fetchDishes = () => (dispatch) => {
     dispatch(dishesLoading(true));
 
@@ -16,17 +31,3 @@ export const fetchDishes = () => (dispatch) => {
         .then(dishes => dispatch(addDishes(dishes)))
         .catch(error => dispatch(dishesFailed(error.message)));
 }
-
-export const dishesLoading = () => ({
-    type: 'DISHES_LOADING'
-});
-
-export const dishesFailed = (errmess) => ({
-    type: 'DISHES_FAILED',
-    payload: errmess
-});
-
-export const addDishes = (dishes) => ({
-    type: 'ADD_DISHES',
-    payload: dishes
-});

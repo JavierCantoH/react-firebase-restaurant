@@ -1,5 +1,19 @@
 import { auth, firestore } from '../../firebase/firebase';
 
+export const favoritesLoading = () => ({
+    type: 'FAVORITES_LOADING'
+});
+
+export const favoritesFailed = (errmess) => ({
+    type: 'FAVORITES_FAILED',
+    payload: errmess
+});
+
+export const addFavorites = (favorites) => ({
+    type: 'ADD_FAVORITES',
+    payload: favorites
+});
+
 export const postFavorite = (dishId) => (dispatch) => {
 
     if (!auth.currentUser) {
@@ -73,16 +87,3 @@ export const fetchFavorites = () => (dispatch) => {
     .catch(error => dispatch(favoritesFailed(error.message)));
 }
 
-export const favoritesLoading = () => ({
-    type: 'FAVORITES_LOADING'
-});
-
-export const favoritesFailed = (errmess) => ({
-    type: 'FAVORITES_FAILED',
-    payload: errmess
-});
-
-export const addFavorites = (favorites) => ({
-    type: 'ADD_FAVORITES',
-    payload: favorites
-});

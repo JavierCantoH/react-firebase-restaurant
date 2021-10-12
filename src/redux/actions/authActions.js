@@ -21,6 +21,18 @@ export const loginError = (message) => {
     }
 }
 
+export const requestLogout = () => {
+    return {
+      type: 'LOGOUT_REQUEST'
+    }
+}
+  
+export const receiveLogout = () => {
+    return {
+      type: 'LOGOUT_SUCCESS'
+    }
+}
+
 export const loginUser = (creds) => (dispatch) => {
     // We dispatch requestLogin to kickoff the call to the API
     dispatch(requestLogin(creds))
@@ -36,17 +48,6 @@ export const loginUser = (creds) => (dispatch) => {
     .catch(error => dispatch(loginError(error.message)))
 };
 
-export const requestLogout = () => {
-    return {
-      type: 'LOGOUT_REQUEST'
-    }
-}
-  
-export const receiveLogout = () => {
-    return {
-      type: 'LOGOUT_SUCCESS'
-    }
-}
 
 // Logs the user out
 export const logoutUser = () => (dispatch) => {
@@ -61,7 +62,7 @@ export const logoutUser = () => (dispatch) => {
     dispatch(receiveLogout())
 }
 
-// -------------------- Google Auth -------------
+// -------------------- Google Auth ---------------------
 
 export const googleLogin = () => (dispatch) => {
     const provider = new fireauth.GoogleAuthProvider();
