@@ -1,16 +1,24 @@
 import React, { Component } from 'react';
-import Home from './HomeComponent';
-import About from './AboutComponent';
-import Menu from './MenuComponent';
-import Contact from './ContactComponent';
-import DishDetail from './DishdetailComponent';
-import Favorites from './FavoriteComponent';
-import Header from './HeaderComponent';
-import Footer from './FooterComponent';
+// components
+import Home from './home/HomeComponent';
+import About from './about_us/AboutComponent';
+import Menu from './menu/MenuComponent';
+import Contact from './contact_us/ContactComponent';
+import DishDetail from './menu/DishdetailComponent';
+import Favorites from './favorites/FavoriteComponent';
+import Header from './navbar_footer/HeaderComponent';
+import Footer from './navbar_footer/FooterComponent';
+// reac and redux
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { postComment, postFeedback, fetchDishes, fetchComments, fetchPromos, fetchLeaders, loginUser, logoutUser, fetchFavorites, googleLogin, postFavorite, deleteFavorite } from '../redux/ActionCreators';
+import { postComment, fetchComments } from '../redux/actions/commentsActions';
+import {fetchDishes} from '../redux/actions/dishesActions';
+import { fetchPromos } from '../redux/actions/promotionsActions';
+import { fetchLeaders } from '../redux/actions/leadersActions';
+import { loginUser, logoutUser, googleLogin } from '../redux/actions/authActions';
+import { fetchFavorites, postFavorite, deleteFavorite } from '../redux/actions/favoritesActions';
 import { actions } from 'react-redux-form';
+// animations
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 const mapStateToProps = state => {
@@ -31,7 +39,6 @@ const mapDispatchToProps = (dispatch) => ({
   fetchComments: () => {dispatch(fetchComments())},
   fetchPromos: () => {dispatch(fetchPromos())},
   fetchLeaders: () => dispatch(fetchLeaders()),
-  postFeedback: (feedback) => dispatch(postFeedback(feedback)),
   loginUser: (creds) => dispatch(loginUser(creds)),
   logoutUser: () => dispatch(logoutUser()),
   fetchFavorites: () => dispatch(fetchFavorites()),
@@ -119,11 +126,11 @@ class Main extends Component {
           <CSSTransition key={this.props.location.key} classNames="page" timeout={300}>
             <Switch>
               <Route path="/home" component={HomePage} />
-              <Route exact path='/aboutus' component={() => <About leaders={this.props.leaders} />} />} />
+              <Route exact path='/aboutus' component={() => <About leaders={this.props.leaders} />}/>
               <Route exact path="/menu" component={() => <Menu dishes={this.props.dishes} />} />
               <Route path="/menu/:dishId" component={DishWithId} />
               <PrivateRoute exact path="/favorites" component={() => <Favorites favorites={this.props.favorites} dishes={this.props.dishes} deleteFavorite={this.props.deleteFavorite} />} />
-              <Route exact path="/contactus" component={() => <Contact resetFeedbackForm={this.props.resetFeedbackForm} postFeedback={this.props.postFeedback} />} />
+              <Route exact path="/contactus" component={() => <Contact/>}/>
               <Redirect to="/home" />
             </Switch>
           </CSSTransition>
