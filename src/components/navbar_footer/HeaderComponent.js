@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem, Jumbotron,
     Button, Modal, ModalHeader, ModalBody,
-    Form, FormGroup, Input, Label } from 'reactstrap';
+    Form, FormGroup, Input, Label, ButtonGroup } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 
 class Header extends Component {
@@ -16,6 +16,8 @@ class Header extends Component {
         this.toggleModal = this.toggleModal.bind(this);
         this.handleLogin = this.handleLogin.bind(this);
         this.handleGoogleLogin = this.handleGoogleLogin.bind(this);
+        this.handleFacebookLogin = this.handleFacebookLogin.bind(this);
+        this.handleTwitterLogin = this.handleTwitterLogin.bind(this);
         this.handleLogout = this.handleLogout.bind(this);
     }
 
@@ -41,6 +43,18 @@ class Header extends Component {
     handleGoogleLogin(event) {
         this.toggleModal();
         this.props.googleLogin();
+        event.preventDefault();
+    }
+
+    handleFacebookLogin(event) {
+        this.toggleModal();
+        this.props.facebookLogin();
+        event.preventDefault();
+    }
+
+    handleTwitterLogin(event) {
+        this.toggleModal();
+        this.props.twitterLogin();
         event.preventDefault();
     }
 
@@ -148,7 +162,11 @@ class Header extends Component {
                             <Button type="submit" value="submit" color="primary">Login</Button>
                         </Form>
                         <p></p>
-                        <Button color="danger" onClick={this.handleGoogleLogin}><span className="fa fa-google fa-lg"></span> Login with Google</Button>
+                        <ButtonGroup size='sm'>
+                            <Button color="primary" onClick={this.handleFacebookLogin}><span className="fa fa-facebook fa-lg"></span> Login with Facebook</Button>
+                            <Button color="danger" onClick={this.handleGoogleLogin}><span className="fa fa-google fa-lg"></span> Login with Google</Button>
+                            <Button color="info" onClick={this.handleTwitterLogin}><span className="fa fa-twitter fa-lg"></span> Login with Twitter</Button>
+                        </ButtonGroup>
                     </ModalBody>
                 </Modal>
             </React.Fragment>

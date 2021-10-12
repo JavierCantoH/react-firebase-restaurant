@@ -33,6 +33,7 @@ export const receiveLogout = () => {
     }
 }
 
+// login with email
 export const loginUser = (creds) => (dispatch) => {
     // We dispatch requestLogin to kickoff the call to the API
     dispatch(requestLogin(creds))
@@ -62,10 +63,43 @@ export const logoutUser = () => (dispatch) => {
     dispatch(receiveLogout())
 }
 
-// -------------------- Google Auth ---------------------
-
+// login with google
 export const googleLogin = () => (dispatch) => {
     const provider = new fireauth.GoogleAuthProvider();
+
+    auth.signInWithPopup(provider)
+        .then((result) => {
+            var user = result.user;
+            localStorage.setItem('user', JSON.stringify(user));
+            // Dispatch the success action
+            dispatch(fetchFavorites());
+            dispatch(receiveLogin(user));
+        })
+        .catch((error) => {
+            dispatch(loginError(error.message));
+        });
+}
+
+// login with facebook
+export const facebookLogin = () => (dispatch) => {
+    const provider = new fireauth.FacebookAuthProvider();
+
+    auth.signInWithPopup(provider)
+        .then((result) => {
+            var user = result.user;
+            localStorage.setItem('user', JSON.stringify(user));
+            // Dispatch the success action
+            dispatch(fetchFavorites());
+            dispatch(receiveLogin(user));
+        })
+        .catch((error) => {
+            dispatch(loginError(error.message));
+        });
+}
+
+// login with twitter
+export const twitterLogin = () => (dispatch) => {
+    const provider = new fireauth.TwitterAuthProvider();
 
     auth.signInWithPopup(provider)
         .then((result) => {

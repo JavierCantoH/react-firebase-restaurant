@@ -15,7 +15,7 @@ import { postComment, fetchComments } from '../redux/actions/commentsActions';
 import {fetchDishes} from '../redux/actions/dishesActions';
 import { fetchPromos } from '../redux/actions/promotionsActions';
 import { fetchLeaders } from '../redux/actions/leadersActions';
-import { loginUser, logoutUser, googleLogin } from '../redux/actions/authActions';
+import { loginUser, logoutUser, googleLogin, facebookLogin, twitterLogin } from '../redux/actions/authActions';
 import { fetchFavorites, postFavorite, deleteFavorite } from '../redux/actions/favoritesActions';
 import { actions } from 'react-redux-form';
 // animations
@@ -43,6 +43,8 @@ const mapDispatchToProps = (dispatch) => ({
   logoutUser: () => dispatch(logoutUser()),
   fetchFavorites: () => dispatch(fetchFavorites()),
   googleLogin: () => dispatch(googleLogin()),
+  facebookLogin: () => dispatch(facebookLogin()),
+  twitterLogin: () => dispatch(twitterLogin()),
   postFavorite: (dishId) => dispatch(postFavorite(dishId)),
   deleteFavorite: (dishId) => dispatch(deleteFavorite(dishId))
 });
@@ -121,6 +123,8 @@ class Main extends Component {
           loginUser={this.props.loginUser} 
           logoutUser={this.props.logoutUser}
           googleLogin={this.props.googleLogin}
+          facebookLogin={this.props.facebookLogin}
+          twitterLogin={this.props.twitterLogin}
           />   
         <TransitionGroup>
           <CSSTransition key={this.props.location.key} classNames="page" timeout={300}>
