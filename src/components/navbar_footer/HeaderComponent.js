@@ -163,13 +163,13 @@ class Header extends Component {
                         </Form>
                         <p></p>
                         <div className="text-center">
-                        <Button onClick={this.handleFacebookLogin}><a class="btn btn-block btn-social btn-facebook"><span class="fa fa-facebook"></span> Sign in with Facebook</a></Button>
+                        <Button onClick={this.handleFacebookLogin}><a className="btn btn-block btn-social btn-facebook"><span className="fa fa-facebook"></span> Sign in with Facebook</a></Button>
                             <br/>
                             <br/>
-                            <Button onClick={this.handleGoogleLogin}><a class="btn btn-block btn-social btn-google"><span class="fa fa-google"></span> Sign in with Google</a></Button>
+                            <Button onClick={this.handleGoogleLogin}><a className="btn btn-block btn-social btn-google"><span className="fa fa-google"></span> Sign in with Google</a></Button>
                             <br/>
                             <br/>
-                            <Button onClick={this.handleTwitterLogin}><a class="btn btn-block btn-social btn-twitter"><span class="fa fa-twitter"></span> Sign in with Twitter</a></Button>
+                            <Button onClick={this.handleTwitterLogin}><a className="btn btn-block btn-social btn-twitter"><span className="fa fa-twitter"></span> Sign in with Twitter</a></Button>
                         </div>
                     </ModalBody>
                 </Modal>

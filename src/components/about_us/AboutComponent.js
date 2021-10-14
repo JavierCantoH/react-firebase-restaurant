@@ -3,19 +3,24 @@ import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'r
 import { Link } from 'react-router-dom';
 import { Loading } from '../animations/LoadingComponent';
 import { Fade, Stagger } from 'react-animation-components';
+import { FadeTransform } from 'react-animation-components';
+import { CardImg, CardText, CardTitle, CardSubtitle } from 'reactstrap';
 
 function RenderLeader({leader}) {
     return(
-        <Media tag="li">
-            <Media left middle>
-                <Media object src={leader.image} alt={leader.name} />
-            </Media>
-            <Media body className="ml-5">
-                <Media heading>{leader.name}</Media>
-                <p>{leader.designation}</p>
-                <p>{leader.description}</p>
-            </Media>
-        </Media>
+        <FadeTransform in 
+            transformProps={{
+                exitTransform: 'scale(0.5) translateY(-50%)'
+            }}>
+            <Card>
+                <CardImg src={leader.image} alt={leader.name} />
+                <CardBody>
+                    <CardTitle>{leader.name}</CardTitle>
+                    {leader.designation ? <CardSubtitle>{leader.designation}</CardSubtitle> : null}
+                    <CardText>{leader.description}</CardText>
+                </CardBody>
+            </Card>
+        </FadeTransform>
     );
 
 }
@@ -72,7 +77,7 @@ function About(props) {
             <div className="row row-content">
                 <div className="col-12 col-md-6">
                     <h2>Nuestra Historia</h2>
-                    <p>Expezando en 2018, las mejores amigas, Paola y Renata decidieron emprender un pequeño negocio de postres saludables.</p>
+                    <p>Empezando en 2018, las mejores amigas, Paola y Renata decidieron emprender un pequeño negocio de postres saludables.</p>
                     <p>Con su primer producto, las <em>Enroscadas</em>, han alcanzado un gran éxito en la ciudad de Puebla.</p>
                 </div>
                 <div className="col-12 col-md-5">
@@ -104,7 +109,7 @@ function About(props) {
                 </div>
             </div>
             <div className="row row-content">
-                <div className="col-12">
+                <div className="col-12 col-md-6">
                     <h2>Nuestro equipo</h2>
                 </div>
                 <LeaderList leaders={props.leaders} />
