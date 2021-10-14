@@ -17,13 +17,12 @@ function Footer(props) {
                         </ul>
                     </div>
                     <div className="col-7 col-sm-5">
-                        <h5>Our Address</h5>
+                        <h5>Nuestra dirección</h5>
                         <address>
                         C. 16 de Septiembre<br />
                         Centro histórico de Puebla<br />
                         72000 Puebla, Pue.<br />
                         <i className="fa fa-phone fa-lg"></i>: +52 222 1234 567<br />
-                        <i className="fa fa-fax fa-lg"></i>: +52 222 8765 432<br />
                         <i className="fa fa-envelope fa-lg"></i>: <a href="mailto:confusion@food.net">
                             enroscadas@food.mx</a>
                         </address>
@@ -32,8 +31,7 @@ function Footer(props) {
                         <div className="text-center">
                             <a className="btn btn-social-icon btn-facebook" href="https://www.facebook.com/enroscadasmx/"><i className="fa fa-facebook"></i></a>
                             <a className="btn btn-social-icon" href="https://instagram.com/enroscadasmx?utm_medium=copy_link"><i className="fa fa-instagram fa-5x"></i></a>
-                            <a className="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i className="fa fa-twitter"></i></a>
-                            <a role="button" className="btn btn-success" href="tel:+85212345678"><i className="fa fa-whatsapp"></i></a>
+                            <a role="button" className="btn btn-success" href="https://api.whatsapp.com/send?phone=5212228056287&text=Holaa!!%20Me%20podr%C3%ADan%20dar%20información%20sobre%20sus%20productos%20y%20precios%20por%20favor!!%20Muchas%20gracias🙏🏼"><i className="fa fa-whatsapp"></i></a>
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import { Breadcrumb, BreadcrumbItem, Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 class Contact extends Component {
@@ -19,32 +19,20 @@ class Contact extends Component {
                 </div>
                 <div className="row row-content">
                     <div className="col-12">
-                    <h3>Location Information</h3>
+                        <h3>Haz tu pedido por Whatsapp!</h3>
                     </div>
-                    <div className="col-12 col-sm-4 offset-sm-1">
-                            <h5>Our Address</h5>
-                            <address>
-                            C. 16 de Septiembre<br />
-                            Centro histórico de Puebla<br />
-                            72000 Puebla, Pue.<br />
-                            <i className="fa fa-phone"></i>: +52 222 1234 567<br />
-                            <i className="fa fa-fax"></i>: +52 222 8765 432<br />
-                            <i className="fa fa-envelope"></i>: <a href="mailto:confusion@food.net">enroscadas@food.mx</a>
-                            </address>
-                    </div>
-                    <div className="col-12 col-sm-6 offset-sm-1">
-                        {/* <h5>Map of our Location</h5> */}
-                    </div>
-                    <div className="col-12 col-sm-11 offset-sm-1">
-                        <div className="btn-group" role="group">
-                            <a role="button" className="btn btn-primary" href="tel:+85212345678"><i className="fa fa-phone"></i> Call</a>
-                            <a role="button" className="btn btn-success" href="tel:+85212345678"><i className="fa fa-whatsapp"></i> Whatsapp</a>
-                        </div>
+                    <div className="col-12 col-sm-11 offset-sm-1 text-center d-grid gap-2">
+                        <Button color="success" size="lg"
+                             href="https://api.whatsapp.com/send?phone=5212228056287&text=Holaa!!%20Me%20podr%C3%ADan%20dar%20información%20sobre%20sus%20productos%20y%20precios%20por%20favor!!%20Muchas%20gracias🙏🏼" 
+                             className="fa fa-whatsapp"> 
+                              Whatsapp
+                        </Button>
                     </div>
                 </div>
                 <div className="row row-content">
-                    <div className="col-12">
-                        <h3>Send us your feedback!</h3>
+                    <div className="col-12 text-center">
+                        <h3>Dinos que te parecieron nuestros productos</h3>
+                        <h3>y síguenos en redes sociales!</h3>
                     </div>
                     <div className="col-12 col-md-9">
                         
