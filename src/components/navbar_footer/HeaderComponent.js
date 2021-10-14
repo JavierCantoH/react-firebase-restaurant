@@ -103,7 +103,7 @@ class Header extends Component {
                             <Nav className="ml-auto" navbar>
                                 <NavItem>
                                     { !this.props.auth.isAuthenticated ?
-                                        <Button outline onClick={this.toggleModal}>
+                                        <Button color="light" outline onClick={this.toggleModal}>
                                             <span className="fa fa-sign-in fa-lg"></span> Login
                                             {this.props.auth.isFetching ?
                                                 <span className="fa fa-spinner fa-pulse fa-fw"></span>
@@ -113,7 +113,7 @@ class Header extends Component {
                                         :
                                         <div>
                                         <div className="navbar-text mr-3">{this.props.auth.user.displayName}</div>
-                                        <Button outline onClick={this.handleLogout}>
+                                        <Button color="light" outline onClick={this.handleLogout}>
                                             <span className="fa fa-sign-out fa-lg"></span> Logout
                                             {this.props.auth.isFetching ?
                                                 <span className="fa fa-spinner fa-pulse fa-fw"></span>
@@ -163,13 +163,13 @@ class Header extends Component {
                         </Form>
                         <p></p>
                         <div className="text-center">
-                        <Button onClick={this.handleFacebookLogin}><a className="btn btn-block btn-social btn-facebook"><span className="fa fa-facebook"></span> Sign in with Facebook</a></Button>
+                            <Button color="outline-light" onClick={this.handleFacebookLogin}><a className="btn btn-block btn-social btn-facebook"><span className="fa fa-facebook"></span> Sign in with Facebook</a></Button>
                             <br/>
                             <br/>
-                            <Button onClick={this.handleGoogleLogin}><a className="btn btn-block btn-social btn-google"><span className="fa fa-google"></span> Sign in with Google</a></Button>
+                            <Button color="outline-light" onClick={this.handleGoogleLogin}><a className="btn btn-block btn-social btn-google"><span className="fa fa-google"></span> Sign in with Google</a></Button>
                             <br/>
                             <br/>
-                            <Button onClick={this.handleTwitterLogin}><a className="btn btn-block btn-social btn-twitter"><span className="fa fa-twitter"></span> Sign in with Twitter</a></Button>
+                            <Button color="outline-light" onClick={this.handleTwitterLogin}><a className="btn btn-block btn-social btn-twitter"><span className="fa fa-twitter"></span> Sign in with Twitter</a></Button>
                         </div>
                     </ModalBody>
                 </Modal>
