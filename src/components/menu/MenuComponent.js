@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardImg, CardImgOverlay, CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import { Card, CardImg, CardImgOverlay, Breadcrumb, BreadcrumbItem, Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Loading }  from '../animations/LoadingComponent';
 
@@ -9,7 +9,7 @@ import { Loading }  from '../animations/LoadingComponent';
                 <Link to={`/menu/${dish._id}`} >
                     <CardImg width="100%" src={dish.image} alt={dish.name} />
                     <CardImgOverlay>
-                        <CardTitle>{dish.name}</CardTitle>
+                        <Button color="warning">{dish.name}</Button>
                     </CardImgOverlay>
                 </Link>
             </Card>

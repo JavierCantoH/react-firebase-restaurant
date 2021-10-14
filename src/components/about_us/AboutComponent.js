@@ -71,23 +71,21 @@ function About(props) {
             </div>
             <div className="row row-content">
                 <div className="col-12 col-md-6">
-                    <h2>Our History</h2>
-                    <p>Started in 2010, Ristorante con Fusion quickly established itself as a culinary icon par excellence in Hong Kong. With its unique brand of world fusion cuisine that can be found nowhere else, it enjoys patronage from the A-list clientele in Hong Kong.  Featuring four of the best three-star Michelin chefs in the world, you never know what will arrive on your plate the next time you visit us.</p>
-                    <p>The restaurant traces its humble beginnings to <em>The Frying Pan</em>, a successful chain started by our CEO, Mr. Peter Pan, that featured for the first time the world's best cuisines in a pan.</p>
+                    <h2>Nuestra Historia</h2>
+                    <p>Expezando en 2018, las mejores amigas, Paola y Renata decidieron emprender un pequeño negocio de postres saludables.</p>
+                    <p>Con su primer producto, las <em>Enroscadas</em>, han alcanzado un gran éxito en la ciudad de Puebla.</p>
                 </div>
                 <div className="col-12 col-md-5">
                     <Card>
-                        <CardHeader className="bg-primary text-white">Facts At a Glance</CardHeader>
+                        <CardHeader className="bg-success text-white">Facts At a Glance</CardHeader>
                         <CardBody>
                             <dl className="row p-1">
-                                <dt className="col-6">Started</dt>
-                                <dd className="col-6">3 Feb. 2013</dd>
-                                <dt className="col-6">Major Stake Holder</dt>
-                                <dd className="col-6">HK Fine Foods Inc.</dd>
-                                <dt className="col-6">Last Year's Turnover</dt>
-                                <dd className="col-6">$1,250,375</dd>
-                                <dt className="col-6">Employees</dt>
-                                <dd className="col-6">40</dd>
+                                <dt className="col-6">Inicio</dt>
+                                <dd className="col-6">3 Feb. 2018</dd>
+                                <dt className="col-6">Socio Mayoritario</dt>
+                                <dd className="col-6">Paola</dd>
+                                <dt className="col-6">Empleados</dt>
+                                <dd className="col-6">20</dd>
                             </dl>
                         </CardBody>
                     </Card>
@@ -96,11 +94,9 @@ function About(props) {
                     <Card>
                         <CardBody className="bg-faded">
                             <blockquote className="blockquote">
-                                <p className="mb-0">You better cut the pizza in four pieces because
-                                    I'm not hungry enough to eat six.</p>
-                                <footer className="blockquote-footer">Yogi Berra,
-                                <cite title="Source Title">The Wit and Wisdom of Yogi Berra,
-                                    P. Pepe, Diversion Books, 2014</cite>
+                                <p className="mb-0">Fue un hit la rosca! Voló y nos gustó mucho!</p>
+                                <footer className="blockquote-footer">Juan C,
+                                <cite title="Source Title"> cliente satisfecho, 2019</cite>
                                 </footer>
                             </blockquote>
                         </CardBody>
@@ -109,7 +105,7 @@ function About(props) {
             </div>
             <div className="row row-content">
                 <div className="col-12">
-                    <h2>Corporate Leadership</h2>
+                    <h2>Nuestro equipo</h2>
                 </div>
                 <LeaderList leaders={props.leaders} />
             </div>

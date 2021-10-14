@@ -132,8 +132,8 @@ class Header extends Component {
                     <div className="container">
                         <div className="row row-header">
                             <div className="col-12 col-sm-6">
-                                <h1>Ristorante Con Fusion</h1>
-                                <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!</p>
+                                <h1>Enroscadas</h1>
+                                <p>Brindamos productos de alta calidad y gran sabor superando las expectativas de nuestros clientes a través de la excelencia!</p>
                             </div>
                         </div>
                     </div>
@@ -163,15 +163,14 @@ class Header extends Component {
                         </Form>
                         <p></p>
                         <div className="text-center">
-                        <Button color="primary" onClick={this.handleFacebookLogin}><span className="fa fa-facebook fa-lg"></span> Login with Facebook</Button>
+                        <Button onClick={this.handleFacebookLogin}><a class="btn btn-block btn-social btn-facebook"><span class="fa fa-facebook"></span> Sign in with Facebook</a></Button>
                             <br/>
                             <br/>
-                            <Button color="danger" onClick={this.handleGoogleLogin}><span className="fa fa-google fa-lg"></span> Login with Google</Button>
+                            <Button onClick={this.handleGoogleLogin}><a class="btn btn-block btn-social btn-google"><span class="fa fa-google"></span> Sign in with Google</a></Button>
                             <br/>
                             <br/>
-                            <Button color="info" onClick={this.handleTwitterLogin}><span className="fa fa-twitter fa-lg"></span> Login with Twitter</Button>
+                            <Button onClick={this.handleTwitterLogin}><a class="btn btn-block btn-social btn-twitter"><span class="fa fa-twitter"></span> Sign in with Twitter</a></Button>
                         </div>
-                        
                     </ModalBody>
                 </Modal>
             </React.Fragment>
