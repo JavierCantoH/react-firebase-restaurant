@@ -44,7 +44,7 @@ class Contact extends Component {
                 </div>
                 <div className="row row-content">
                     <div className="col-12">
-                        <h3>Send us Your Feedback!</h3>
+                        <h3>Send us your feedback!</h3>
                     </div>
                     <div className="col-12 col-md-9">
                         
