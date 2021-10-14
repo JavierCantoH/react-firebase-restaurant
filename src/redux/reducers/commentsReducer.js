@@ -10,6 +10,7 @@ export const Comments = (state = {
             return {...state, isLoading: false, errMess: action.payload, comments: []};
 
         case 'ADD_COMMENT':
+            alert('Comment added...');
             var comment = action.payload;
             return {...state, comments: state.comments.concat(comment)};
 

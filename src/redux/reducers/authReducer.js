@@ -15,6 +15,7 @@ export const Auth = (state = {
                 isAuthenticated: false,
             };
         case 'LOGIN_SUCCESS':
+            alert('Welcome...');
             return {...state,
                 isLoading: false,
                 isAuthenticated: true,
@@ -33,6 +34,7 @@ export const Auth = (state = {
                 isAuthenticated: true
             };
         case 'LOGOUT_SUCCESS':
+            alert('Goodbye...');
             return {...state,
                 isLoading: false,
                 isAuthenticated: false,

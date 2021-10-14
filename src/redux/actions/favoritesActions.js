@@ -30,6 +30,7 @@ export const postFavorite = (dishId) => (dispatch) => {
             .then(doc => {
                 if (doc.exists) {
                     dispatch(fetchFavorites())
+                    alert('Favorite added...');
                 } else {
                     // doc.data() will be undefined in this case
                     console.log("No such document!");
@@ -56,6 +57,7 @@ export const deleteFavorite = (dishId) => (dispatch) => {
             firestore.collection('favorites').doc(doc.id).delete()
             .then(() => {
                 dispatch(fetchFavorites());
+                alert('Favorite deleted...');
             })
         });
     })
